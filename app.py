@@ -35,8 +35,8 @@ T = {
         "es": "¿Dónde necesita más apoyo Bogotá?",
     },
     "subtitle": {
-        "en": "This dashboard shows where people face the most barriers to finding work in Bogotá."
-              "Explore relationships between high unemployment locations and services such as transportation or health. "
+        "en": "This dashboard shows where people face the most barriers to finding work in Bogotá. "
+              "Explore relationships between high unemployment locations; and services such as transportation or health. "
               "It helps decision-makers and residents see which of the city's 95 zones (UPZ) "
               "should be prioritized for new services, job programs, or transportation.",
         "es": "Este tablero muestra dónde las personas enfrentan más obstáculos para encontrar empleo en Bogotá. "
