@@ -121,8 +121,12 @@ fig = px.choropleth_map(
     opacity=0.75,
     map_style="carto-positron",
 )
-fig.update_layout(margin=dict(l=0, r=0, t=0, b=40), height=620)
+fig.update_layout(margin=dict(l=0, r=0, t=70, b=40), height=620)
 fig.update_layout(map_center={"lat": 4.63, "lon": -74.11}, map_zoom=10.4)
+fig.update_layout(coloraxis_colorbar=dict(
+    orientation="h", x=0.5, xanchor="center", y=1.02, yanchor="bottom",
+    len=0.9, thickness=12, title=dict(side="top"),
+))
 for label in show_res:
     cat, color = RES_STYLE[label]
     pts = res[res["category"] == cat]
@@ -140,6 +144,7 @@ for label in show_res:
 fig.update_layout(legend=dict(x=0.01, y=0.01, xanchor="left", yanchor="bottom",
                               bgcolor="rgba(255,255,255,0.85)"))
 st.plotly_chart(fig, use_container_width=True)
+st.markdown("<br><br>", unsafe_allow_html=True)
 
 # ---------- top 10 bar chart ----------
 st.subheader("Top 10 priority UPZ")
@@ -172,9 +177,9 @@ bar = px.bar(
         "custom_rank": "Priority rank (of 95)",
     },
 )
-bar.update_traces(marker_color="#2c3e50", textposition="outside")
-bar.update_layout(height=420, margin=dict(l=0, r=0, t=10, b=0), xaxis_range=[0, 1.05])
-st.plotly_chart(bar, use_container_width=True)
+bar.update_traces(marker_color="#2c3e50", textposition="inside", textfont_color="white")
+bar.update_layout(height=420, margin=dict(l=0, r=0, t=10, b=0), xaxis_range=[0, 1])
+st.plotly_chart(bar, use_container_width=True, config={"displayModeBar": False})
 
 # ---------- comparison chart ----------
 st.subheader("How does unemployment relate to access and commutes?")
@@ -227,7 +232,7 @@ scatter.update_layout(height=480, margin=dict(l=0, r=0, t=40, b=0),
                      legend=dict(orientation="h", x=0, y=1.02, xanchor="left", yanchor="bottom",
                 traceorder="reversed"),
 )
-st.plotly_chart(scatter, use_container_width=True)
+st.plotly_chart(scatter, use_container_width=True, config={"displayModeBar": False})
 
 # ---------- data table ----------
 st.subheader("Explore the data")
