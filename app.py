@@ -24,8 +24,8 @@ def load_data():
 geo, upz, res = load_data()
 
 # ---------- language ----------
-lang_choice = st.sidebar.radio("Language / Idioma", ["English", "Español"], horizontal=True, key="lang")
-L = "es" if lang_choice == "Español" else "en"
+lang_choice = st.radio("🌐 Language / Idioma", ["🇺🇸 English", "🇨🇴 Español"], horizontal=True, key="lang")
+L = "es" if "Español" in lang_choice else "en"
 
 # All visible text, in English and Spanish
 T = {
